@@ -253,11 +253,11 @@ export default {
     roleDropdown,
   },
   mounted() {
-    this.$store
-      .dispatch("getAllUserTypes")
-      .then()
-      .catch();
-    this.getUsersMethod();
+    // this.$store
+    //   .dispatch("getAllUserTypes")
+    //   .then()
+    //   .catch();
+    // this.getUsersMethod();
   },
   computed: {
     getUsers() {

@@ -387,8 +387,8 @@ export default {
     },
   },
   mounted() {
-    this.getImages()
-    this.getItems()
+    // this.getImages()
+    // this.getItems()
 
   },
 };

@@ -43,9 +43,9 @@ export default {
     // StatsWidget13
   },
   mounted() {
-    this.$store.dispatch('getAllUsers')
-    this.$store.dispatch('getAllItems')
-    this.$store.dispatch('getAllVotes')
+    // this.$store.dispatch('getAllUsers')
+    // this.$store.dispatch('getAllItems')
+    // this.$store.dispatch('getAllVotes')
     // this.$store.dispatch(SET_BREADCRUMB, [{
     //   title: "Dashboard"
     // }]);

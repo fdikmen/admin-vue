@@ -241,10 +241,10 @@ export default {
   components: {
   },
   mounted() {
-    this.getAdvertise()
-    this.getImages()
-    this.getAllUsers()
-    this.user = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
+    // this.getAdvertise()
+    // this.getImages()
+    // this.getAllUsers()
+    // this.user = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
   },
   computed: {
     photo() {

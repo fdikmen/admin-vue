@@ -161,7 +161,7 @@ import {
   mapState
 } from "vuex";
 import {
-  LOGIN,
+  // LOGIN,
   LOGOUT,
   REGISTER
 } from "@/core/services/store/auth.module";
@@ -309,67 +309,67 @@ export default {
 
     onSubmitLogin() {
       this.$router.push({name: "dashboard"})
-      const validation = this.fv.validate()
-      let email = this.$refs.email.value
-      let password = this.$refs.password.value
-      // clear existing errors
-      this.$store.dispatch(LOGOUT);
-      // set spinner to submit button
-      const submitButton = this.$refs["kt_login_signin_submit"];
-      submitButton.classList.add("spinner", "spinner-light", "spinner-right")
+      // const validation = this.fv.validate()
+      // let email = this.$refs.email.value
+      // let password = this.$refs.password.value
+      // // clear existing errors
+      // this.$store.dispatch(LOGOUT);
+      // // set spinner to submit button
+      // const submitButton = this.$refs["kt_login_signin_submit"];
+      // submitButton.classList.add("spinner", "spinner-light", "spinner-right")
 
-      validation.then(res => {
-        if(res == 'Valid') {          
-          submitButton.classList.remove("spinner", "spinner-light", "spinner-right")
+      // validation.then(res => {
+      //   if(res == 'Valid') {          
+      //     submitButton.classList.remove("spinner", "spinner-light", "spinner-right")
 
-          this.$store.dispatch(LOGIN, {email, password})
-          .then(() => {            
-            this.$store.dispatch('getAllUsers')
-              .then((res) => {
-                const currentUser = res.find(user => user.email === email)
-                this.$store.dispatch('getUserTypeById', currentUser.userTypeId)
-                  .then(res => {
-                    if (res.data.name === 'admin') {
-                      localStorage.setItem('lastLoginDate', JSON.stringify(new Date().toLocaleString()))
-                      localStorage.setItem('currentUser', JSON.stringify(currentUser))
-                      this.$router.push({name: "dashboard"})
-                    } else {
-                      Swal.fire({
-                        title: "",
-                        text: "Buraya Sadece Yönetici Girebilir",
-                        icon: "error",
-                        confirmButtonClass: "btn btn-secondary",
-                        heightAuto: false
-                      })
-                    }
-                  })
-                  .catch(err => console.log(err))
-              })
-              .catch(err => console.log(err))
-          })
-          .catch(error => {
-            if(error.response.status === 500) {
-              Swal.fire({
-                title: "",
-                text: "Böyle bir kullanıcı Mevcut değil",
-                icon: "error",
-                confirmButtonClass: "btn btn-secondary",
-                heightAuto: false
-              })
-            } else {
-              console.log('bilinmeyen hata oluştu')
-            }
-          })
-        } else if(res == 'Invalid') {
-            Swal.fire({
-              title: "",
-              text: "Girdiğiniz bilgiler hatalı",
-              icon: "error",
-              confirmButtonClass: "btn btn-secondary",
-              heightAuto: false
-            })
-        }
-      })        
+      //     this.$store.dispatch(LOGIN, {email, password})
+      //     .then(() => {            
+      //       this.$store.dispatch('getAllUsers')
+      //         .then((res) => {
+      //           const currentUser = res.find(user => user.email === email)
+      //           this.$store.dispatch('getUserTypeById', currentUser.userTypeId)
+      //             .then(res => {
+      //               if (res.data.name === 'admin') {
+      //                 localStorage.setItem('lastLoginDate', JSON.stringify(new Date().toLocaleString()))
+      //                 localStorage.setItem('currentUser', JSON.stringify(currentUser))
+      //                 this.$router.push({name: "dashboard"})
+      //               } else {
+      //                 Swal.fire({
+      //                   title: "",
+      //                   text: "Buraya Sadece Yönetici Girebilir",
+      //                   icon: "error",
+      //                   confirmButtonClass: "btn btn-secondary",
+      //                   heightAuto: false
+      //                 })
+      //               }
+      //             })
+      //             .catch(err => console.log(err))
+      //         })
+      //         .catch(err => console.log(err))
+      //     })
+      //     .catch(error => {
+      //       if(error.response.status === 500) {
+      //         Swal.fire({
+      //           title: "",
+      //           text: "Böyle bir kullanıcı Mevcut değil",
+      //           icon: "error",
+      //           confirmButtonClass: "btn btn-secondary",
+      //           heightAuto: false
+      //         })
+      //       } else {
+      //         console.log('bilinmeyen hata oluştu')
+      //       }
+      //     })
+      //   } else if(res == 'Invalid') {
+      //       Swal.fire({
+      //         title: "",
+      //         text: "Girdiğiniz bilgiler hatalı",
+      //         icon: "error",
+      //         confirmButtonClass: "btn btn-secondary",
+      //         heightAuto: false
+      //       })
+      //   }
+      // })        
     },
 
     onSubmitRegister() {

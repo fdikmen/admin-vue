@@ -185,9 +185,9 @@
 </style>
 
 <script>
-import {
-  SET_BREADCRUMB
-} from "@/core/services/store/breadcrumbs.module";
+// import {
+//   SET_BREADCRUMB
+// } from "@/core/services/store/breadcrumbs.module";
 // import Dropdown2 from "@/view/pages/custom_pages/profile-comp/Dropdown2"
 // import ProfileOverview from "@/view/pages/custom_pages/profile-comp/ProfileOverview"
 import PersonalInformation from "@/view/pages/custom_pages/profile-comp/PersonalInformation"
@@ -224,38 +224,38 @@ export default {
       },
     };
   },
-  mounted() {
-    this.imageId = JSON.parse(localStorage.getItem('currentUser')).imageId
+  // mounted() {
+  //   this.imageId = JSON.parse(localStorage.getItem('currentUser')).imageId
 
-    if (this.imageId === null) {
-      this.currentPhoto = this.default_photo
-    } else {
-      this.$store.dispatch('getImgById', this.imageId)
-      .then(res => {
-        this.currentPhoto = res.data.url
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
+  //   if (this.imageId === null) {
+  //     this.currentPhoto = this.default_photo
+  //   } else {
+  //     this.$store.dispatch('getImgById', this.imageId)
+  //     .then(res => {
+  //       this.currentPhoto = res.data.url
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  //   }
 
-    this.currentUser = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
-    if (this.currentUser.imageId === null) {
-      this.currentUser.imgUrl = this.default_photo
-    } else {
-      this.$store.dispatch('getImgById', this.currentUser.imageId)
-      .then(res => {
-        this.currentUser.imgUrl = res.data.url
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
-    this.$store.dispatch(SET_BREADCRUMB, [{
-      title: "Profile"
-    }]);
-    this.hideTab()
-  },
+  //   this.currentUser = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
+  //   if (this.currentUser.imageId === null) {
+  //     this.currentUser.imgUrl = this.default_photo
+  //   } else {
+  //     this.$store.dispatch('getImgById', this.currentUser.imageId)
+  //     .then(res => {
+  //       this.currentUser.imgUrl = res.data.url
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  //   }
+  //   this.$store.dispatch(SET_BREADCRUMB, [{
+  //     title: "Profile"
+  //   }]);
+  //   this.hideTab()
+  // },
   methods: {
     toggleProfileAside() {
       this.$refs.profileAside.classList.toggle('asideToggle')

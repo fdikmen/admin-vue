@@ -342,10 +342,10 @@ export default {
     ckeditor: window.CKEditor.component
   },
   mounted() {
-    this.getAdvertise()
-    this.getImages()
-    this.getAllUsers()
-    this.user = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
+    // this.getAdvertise()
+    // this.getImages()
+    // this.getAllUsers()
+    // this.user = Object.assign({}, JSON.parse(localStorage.getItem('currentUser')))
   },
   computed: {
     photo() {

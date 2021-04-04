@@ -176,7 +176,7 @@ export default {
     };
   },
   mounted() {
-    this.getUsersMethod();
+    // this.getUsersMethod();
   },
   computed: {
     getUsers() {

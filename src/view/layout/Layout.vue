@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex flex-column flex-root" v-if="isAuthenticated">
+<div class="d-flex flex-column flex-root" >
   <!-- begin:: Header Mobile -->
   <KTHeaderMobile></KTHeaderMobile>
   <!-- end:: Header Mobile -->
@@ -66,7 +66,7 @@ import KTScrollTop from "@/view/layout/extras/ScrollTop";
 import Loader from "@/view/content/Loader.vue";
 import {
   ADD_BODY_CLASSNAME,
-  REMOVE_BODY_CLASSNAME
+  // REMOVE_BODY_CLASSNAME
 } from "@/core/services/store/htmlclass.module.js";
 
 export default {
@@ -88,20 +88,20 @@ export default {
     // initialize html element classes
     HtmlClass.init(this.layoutConfig());
   },
-  mounted() {
-    // check if current user is authenticated
-     if (this.isAuthenticated) {
-      this.$router.push({
-        name: "login"
-      });
-     }
+  // mounted() {
+  //   // check if current user is authenticated
+  //   //  if (this.isAuthenticated) {
+  //   //   this.$router.push({
+  //   //     name: "login"
+  //   //   });
+  //    }
 
-    // Simulate the delay page loading
-    setTimeout(() => {
-      // Remove page loader after some time
-      this.$store.dispatch(REMOVE_BODY_CLASSNAME, "page-loading");
-    }, 2000);
-  },
+  //   // Simulate the delay page loading
+  //   setTimeout(() => {
+  //     // Remove page loader after some time
+  //     this.$store.dispatch(REMOVE_BODY_CLASSNAME, "page-loading");
+  //   }, 2000);
+  // },
   methods: {},
   computed: {
     ...mapGetters([
